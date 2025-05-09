@@ -5,8 +5,8 @@
 ## 环境要求
 
 - Go 1.24+
-- Docker 正常运行（当前仅支持 Docker）
-- 可访问 Harbor 或兼容的镜像仓库（可选）
+- Docker 正常运行
+- 可访问 Harbor 或兼容的镜像仓库
 
 ## 安装
 
@@ -33,7 +33,7 @@ container-commit commit <container-id> <image-ref> -r <harbor_repo> -u <username
 
 - `<container-id>`: 容器 ID 或名称（必填）
 - `<image-ref>`: 新镜像名（如 myrepo/myimage:tag）（必填）
-- `-r, --repo`: Harbor 仓库地址（如 harbor.example.com/myproject）（可选，指定则推送）
+- `-r, --repo`: Harbor 仓库地址（可选，指定则推送）
 - `-u, --user`: 仓库用户名（可选）
 - `-p, --password`: 仓库密码（可选）
 - `--insecure`: 允许不安全的仓库连接（可选，默认 false）
