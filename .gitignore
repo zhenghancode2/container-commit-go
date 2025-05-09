@@ -1,0 +1,47 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+bin/
+__output*
+
+# Output of go build
+/container-commit-go
+/image-commit-go
+
+# Vendor & dependencies
+/vendor/
+/Gopkg.lock
+/Gopkg.toml
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Test cache
+*.coverprofile
+
+# Tar/image files
+*.tar
+
+# Env files
+.env
