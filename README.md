@@ -33,7 +33,5 @@ container-commit commit <container-id> <image-ref> -r <harbor_repo> -u <username
 
 - `<container-id>`: 容器 ID 或名称（必填）
 - `<image-ref>`: 新镜像名（如 myrepo/myimage:tag）（必填）
-- `-r, --repo`: Harbor 仓库地址（可选，指定则推送）
 - `-u, --user`: 仓库用户名（可选）
 - `-p, --password`: 仓库密码（可选）
-- `--insecure`: 允许不安全的仓库连接（可选，默认 false）

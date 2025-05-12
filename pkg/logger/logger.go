@@ -105,6 +105,11 @@ func WithInt(key string, value int) zapcore.Field {
 	return zap.Int(key, value)
 }
 
+// WithFloat64 创建一个双精度小数字段
+func WithFloat64(key string, value float64) zapcore.Field {
+	return zap.Float64(key, value)
+}
+
 // WithBool 创建一个布尔字段
 func WithBool(key string, value bool) zapcore.Field {
 	return zap.Bool(key, value)

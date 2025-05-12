@@ -4,6 +4,7 @@ import (
 	"container-commit-go/config"
 	"container-commit-go/pkg/container"
 	"container-commit-go/pkg/logger"
+	"container-commit-go/pkg/runtime"
 	"context"
 
 	"github.com/spf13/cobra"
@@ -40,20 +41,16 @@ var commitCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(commitCmd)
-	commitCmd.Flags().StringVarP(&imageRepo, "repo", "r", "", "Harbor repository URL")
 	commitCmd.Flags().StringVarP(&repoUser, "user", "u", "", "Harbor registry username")
 	commitCmd.Flags().StringVarP(&repoPassword, "password", "p", "", "Harbor registry password")
-	commitCmd.Flags().BoolVar(&insecure, "insecure", false, "Allow insecure registry connections")
 }
 
 func run(ctx context.Context, containerID, newImageName string) error {
 	commitOpts := &container.CommitOptions{
-		ContainerIDorName: containerID,
-		ImageRef:          newImageName,
-		PushRepo:          imageRepo,
-		PushUser:          repoUser,
-		PushPassword:      repoPassword,
-		Insecure:          insecure,
+		CommitOptions: runtime.CommitOptions{
+			ContainerIDorName: containerID,
+			ImageRef:          newImageName,
+		},
 	}
 	return container.CommitContainer(ctx, commitOpts)
 }
